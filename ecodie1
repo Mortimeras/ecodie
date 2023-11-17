@@ -1,0 +1,50 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Funzione per cifrare una stringa utilizzando il cifrario di Cesare
+string cifraCesare(const string& testo, int chiave) {
+    string risultato = "";
+
+    for (char carattere : testo) {
+        if (isalpha(carattere)) {
+            char base = isupper(carattere) ? 'A' : 'a';
+            risultato += static_cast<char>((carattere - base + chiave) % 26 + base);
+        } else {
+            risultato += carattere; // Mantieni i caratteri non alfabetici invariati
+        }
+    }
+
+    return risultato;
+}
+
+// Funzione per decifrare una stringa utilizzando il cifrario di Cesare
+string decifraCesare(const string& testo, int chiave) {
+    // Decifratura con chiave negativa equivale a cifratura con chiave positiva
+    return cifraCesare(testo, -chiave);
+}
+
+int main() {
+    cout << "Programma di cifratura/decifratura con il cifrario di Cesare." << endl;
+
+    // Input del testo e della chiave da parte dell'utente
+    string testo;
+    int chiave;
+
+    cout << "Inserisci il testo da cifrare/decifrare: ";
+    getline(cin, testo);
+
+    cout << "Inserisci la chiave di cifratura/decifratura: ";
+    cin >> chiave;
+
+    // Cifratura del testo
+    string testoCifrato = cifraCesare(testo, chiave);
+    cout << "Testo cifrato: " << testoCifrato << endl;
+
+    // Decifratura del testo cifrato
+    string testoDecifrato = decifraCesare(testoCifrato, chiave);
+    cout << "Testo decifrato: " << testoDecifrato << endl;
+
+    return 0;
+}
