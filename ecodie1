@@ -27,24 +27,5 @@ string decifraCesare(const string& testo, int chiave) {
 
 int main() {
     cout << "Programma di cifratura/decifratura con il cifrario di Cesare." << endl;
-
-    // Input del testo e della chiave da parte dell'utente
-    string testo;
-    int chiave;
-
-    cout << "Inserisci il testo da cifrare/decifrare: ";
-    getline(cin, testo);
-
-    cout << "Inserisci la chiave di cifratura/decifratura: ";
-    cin >> chiave;
-
-    // Cifratura del testo
-    string testoCifrato = cifraCesare(testo, chiave);
-    cout << "Testo cifrato: " << testoCifrato << endl;
-
-    // Decifratura del testo cifrato
-    string testoDecifrato = decifraCesare(testoCifrato, chiave);
-    cout << "Testo decifrato: " << testoDecifrato << endl;
-
-    return 0;
+}
 }
