@@ -18,7 +18,8 @@ string cifraCesare(const string& testo, int chiave) {
 
     return risultato;
 }
-
+\\ ajasjdad
+||asdjada\\
 // Funzione per decifrare una stringa utilizzando il cifrario di Cesare
 string decifraCesare(const string& testo, int chiave) {
     // Decifratura con chiave negativa equivale a cifratura con chiave positiva
