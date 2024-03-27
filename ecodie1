@@ -1,20 +1,4 @@
-#include <iostream>
-#include <string>
 
-using namespace std;
-
-// Funzione per cifrare una stringa utilizzando il cifrario di Cesare
-string cifraCesare(const string& testo, int chiave) {
-    string risultato = "";
-
-    for (char carattere : testo) {
-        if (isalpha(carattere)) {
-            char base = isupper(carattere) ? 'A' : 'a';
-            risultato += static_cast<char>((carattere - base + chiave) % 26 + base);
-        } else {
-            risultato += carattere; // Mantieni i caratteri non alfabetici invariati
-        }
-    }
 
     return risultato;
 }
